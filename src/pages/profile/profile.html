@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content class="profile">
+
+
+
+
+  <div *ngFor="let user of AllUsers" class="color">
+        <img class="top_pic" src="{{user.CoverImg}}">
+        <!-- Profile picture -->
+        <img class="profile_pic" src="{{user.ProfileImg}}">
+  
+        <h5>
+          Information
+        </h5>
+
+      <ion-item class="color">
+        <ion-icon name="body" item-left large></ion-icon>
+        <h2>{{user.Name}}</h2>
+      </ion-item>
+
+      <ion-item class="color" (tap)="tapEvent($event)">
+        <ion-icon name="clock" item-left large></ion-icon>
+        <span item-left>Antal träningstimmar:</span>
+        <span item-left>({{tap}} h)</span>
+      </ion-item>
+
+  </div>
+
+
+    <div class="color">
+      <h5>
+        Mina Coacher
+      </h5>
+        <div *ngFor="let coach of Coaches">     
+          <ion-item>
+            <img class="coach_pic" src="{{coach.Img}}">
+            {{coach.Name}}
+          </ion-item>
+        </div>
+    </div>
+
+
+    
+
+</ion-content>
